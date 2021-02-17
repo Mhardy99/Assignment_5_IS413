@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IQueryable<Project>
+
+<header>
+    <h1>Fake Amazon</h1>
+</header>
+
+@foreach (var x in Model) //for each variable in the model list it out
+{
+<div>
+    <h4>@x.Title</h4> <! --listing title -->
+    <p>@x.Author @x.AuthorMiddle @x.AuthorLast </p> <! --listing author -->
+    <p>@x.Publisher</p> <! --listing publisher -->
+    <p>@x.ISBN</p> <! --listing isbn -->
+    <p>@x.Category</p> <! --listing category -->
+    <p>@x.Classification</p>
+    <p>@x.Price</p> <! --listing price -->
+</div>
+}
