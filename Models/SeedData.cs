@@ -31,7 +31,9 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-0451419439",
                         Category = "Classic",
                         Classification = "Fiction",
+                        PageNum = 1488,
                         Price = 9.95
+                        
 
                     },
                     new Project
@@ -44,6 +46,7 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-0743270755",
                         Category = "Biography",
                         Classification = "Non-Fiction",
+                        PageNum = 944,
                         Price = 14.58
 
                     },
@@ -57,6 +60,7 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-0553384611",
                         Category = "Biography",
                         Classification = "Non-Fiction",
+                        PageNum = 832,
                         Price = 21.54
 
                     },
@@ -70,6 +74,7 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-0812981254",
                         Category = "Biography",
                         Classification = "Non-Fiction",
+                        PageNum = 864,
                         Price = 11.61
 
                     },
@@ -83,6 +88,7 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-0812974492",
                         Category = "Historical",
                         Classification = "Non-Fiction",
+                        PageNum = 528,
                         Price = 13.33
 
                     },
@@ -96,6 +102,7 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-0804171281",
                         Category = "Historical Fiction",
                         Classification = "Non-Fiction",
+                        PageNum = 288,
                         Price = 15.95
 
                     },
@@ -109,6 +116,7 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-1455586691",
                         Category = "Self-Help",
                         Classification = "Non-Fiction",
+                        PageNum = 304,
                         Price = 14.99
 
                     },
@@ -123,6 +131,7 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-1455523023",
                         Category = "Self-Help",
                         Classification = "Non-Fiction",
+                        PageNum = 240,
                         Price = 21.66
 
                     },
@@ -136,6 +145,7 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-1591847984",
                         Category = "Business",
                         Classification = "Non-Fiction",
+                        PageNum = 400,
                         Price = 29.16
 
                     },
@@ -150,9 +160,57 @@ namespace Assignment_5_IS413.Models
                         ISBN = "978-0553393613",
                         Category = "Thrillers",
                         Classification = "Fiction",
+                        PageNum = 642,
                         Price = 15.03
 
+                    },
+                    //Three new books taht were added
+                    new Project
+                    {
+
+                        Title = "Way of Kings",
+                        Author = "Brandon",
+                        AuthorMiddle = "",
+                        AuthorLast = "Sanderson",
+                        Publisher = "Tor Books",
+                        ISBN = "978-0765326355",
+                        Category = "High Fantasy",
+                        Classification = "Fiction",
+                        PageNum = 1007,
+                        Price = 9.89
+
+                    },
+                    new Project
+                    {
+
+                        Title = "Red Rising",
+                        Author = "Pierce",
+                        AuthorMiddle = "",
+                        AuthorLast = "Brown",
+                        Publisher = "Del Rey Books",
+                        ISBN = "978-0765326355",
+                        Category = "Science Fiction",
+                        Classification = "Fiction",
+                        PageNum = 382,
+                        Price = 10.15
+
+                    },
+                    new Project
+                    {
+
+                        Title = "Memories of Ice",
+                        Author = "Steven",
+                        AuthorMiddle = "",
+                        AuthorLast = "Erikson",
+                        Publisher = "Tor Books",
+                        ISBN = "978-0765326355",
+                        Category = "High Fantasy",
+                        Classification = "Fiction",
+                        PageNum = 1187,
+                        Price = 9.99
+
                     }
+
 
 
 

@@ -31,6 +31,8 @@ namespace Assignment_5_IS413.Models
         public string Category { get; set; }
         [Required]
         public double Price { get; set; }
+        [Required]
+        public int PageNum { get; set; }
 
     }
 }
