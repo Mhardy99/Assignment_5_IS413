@@ -26,7 +26,7 @@ namespace Assignment_5_IS413.Infrastructure
         public PagingInfo PageModel { get; set; }
         public string PageAction { get; set; }
 
-        public bool PageClasesEnabled { get; set; } = false;
+        public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
         public string PageClassSelected { get; set; }
@@ -43,7 +43,7 @@ namespace Assignment_5_IS413.Infrastructure
                 TagBuilder tag = new TagBuilder("a");
                 tag.Attributes["href"] = UrlHelper.Action(PageAction, new { page = i });
 
-                if (PageClasesEnabled)
+                if (PageClassesEnabled)
                 {
                     tag.AddCssClass(PageClass);
                     tag.AddCssClass(i == PageModel.CurrentPage ? PageClassSelected : PageClassNormal);
