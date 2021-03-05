@@ -28,9 +28,13 @@ namespace Assignment_5_IS413
             services.AddControllersWithViews();
             services.AddDbContext<FakeAmazonDbContext>(options =>
            {
-               options.UseSqlServer(Configuration["ConnectionStrings:FakeAmazonConnection"]);
+               options.UseSqlite(Configuration["ConnectionStrings:FakeAmazonConnection"]);
            });
             services.AddScoped<IFakeAmazonRepository, EFFakeAmazonRepository>();
+
+            services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +52,7 @@ namespace Assignment_5_IS413
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -77,6 +81,7 @@ namespace Assignment_5_IS413
 
                 endpoints.MapDefaultControllerRoute();
 
+                endpoints.MapRazorPages();
             });
 
             SeedData.EnsurePopulated(app);
