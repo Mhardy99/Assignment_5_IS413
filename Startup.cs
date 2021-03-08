@@ -60,23 +60,23 @@ namespace Assignment_5_IS413
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catpage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", Action = "Index" }
                     );
 
                 endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                    "{pageNum:int}",
                     new { Controller = "Home", Action = "Index" }
                     );
 
                 endpoints.MapControllerRoute("category",
                     "{category}",
-                    new { Controller = "Home", Action = "Index", page = 1 });
+                    new { Controller = "Home", Action = "Index", pageNum = 1 });
 
 
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "P{page}",
+                    "P{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();

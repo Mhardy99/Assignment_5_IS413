@@ -43,7 +43,7 @@ namespace Assignment_5_IS413.Infrastructure
             {//building tag
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
                 tag.Attributes["href"] = UrlHelper.Action(PageAction, PageUrlValues);
 
                 if (PageClassesEnabled)

@@ -39,5 +39,11 @@ namespace Assignment_5_IS413.Pages
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
+        public IActionResult OnPostRemove(long bookID, string returnUrl)
+        {
+            Cart.RemoveLine(Cart.Lines.First(cl =>
+            cl.project.BookID == bookID).project);
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
     }
 }
