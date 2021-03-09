@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Assignment_5_IS413.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace Assignment_5_IS413
 {
@@ -35,6 +36,8 @@ namespace Assignment_5_IS413
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

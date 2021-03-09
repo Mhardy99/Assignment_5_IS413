@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace Assignment_5_IS413.Models
 {
-    public class Cart
+    public class Cart //creating the cart
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
-        public void AddItem(Project proj, int qty)
+        public virtual void AddItem(Project proj, int qty)
         {
             CartLine line = Lines.Where(p => p.project.BookID == proj.BookID)
                 .FirstOrDefault();
@@ -27,10 +27,10 @@ namespace Assignment_5_IS413.Models
             }
         }
 
-        public void RemoveLine(Project proj) =>
+        public virtual void RemoveLine(Project proj) =>
             Lines.RemoveAll(x => x.project.BookID == proj.BookID);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public double ComputeTotalSum() => Lines.Sum(e => e.project.Price);
          //here is where we conpute the price of the cart
@@ -42,7 +42,7 @@ namespace Assignment_5_IS413.Models
             public Project project { get; set; }
             public int Quantity { get; set; }
 
-            public double Price { get; set; }
+           // public double Price { get; set; }
 
         }
     }

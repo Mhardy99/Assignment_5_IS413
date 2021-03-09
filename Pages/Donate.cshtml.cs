@@ -14,9 +14,10 @@ namespace Assignment_5_IS413.Pages
     {
         private IFakeAmazonRepository repository;
 
-        public DonateModel(IFakeAmazonRepository repo)
+        public DonateModel(IFakeAmazonRepository repo, Cart cartService)
         {
             repository = repo;
+            Cart = cartService;
         }
         //properties
         public Cart Cart { get; set; }
@@ -25,23 +26,36 @@ namespace Assignment_5_IS413.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+         //   Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
-        public IActionResult OnPost(long BookID, string returnUrl)
+        public IActionResult OnPost(long bookID, string returnUrl)
         {
-            Project project = repository.Projects.FirstOrDefault(p => p.BookID == BookID);
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            Project project = repository.Projects
+                .FirstOrDefault(p => p.BookID == bookID);
+          //  Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
             Cart.AddItem(project, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+         //   HttpContext.Session.SetJson("cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
+
+
+           // Project project = repository.Projects.FirstOrDefault(p => p.BookID == BookID);
+        //    Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+
+           // Cart.AddItem(project, 1);
+
+        //    HttpContext.Session.SetJson("cart", Cart);
+
+         //   return RedirectToPage(new { returnUrl = returnUrl });
+
+
         }
         public IActionResult OnPostRemove(long bookID, string returnUrl)
         {
-            Cart.RemoveLine(Cart.Lines.First(cl =>
+            Cart.RemoveLine(Cart.Lines.FirstOrDefault(cl =>
             cl.project.BookID == bookID).project);
             return RedirectToPage(new { returnUrl = returnUrl });
         }
